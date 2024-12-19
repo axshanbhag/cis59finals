@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Contact Me</title>
+  <style>
+    body {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    .footer {
+        background-color: lightpink;
+        text-align: center;
+        padding: 25px;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      background-color: #a98e8e;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar a {
+      color: white;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      width: 100%;
+    }
+
+    li {
+      flex: 1;
+      text-align: center;
+    }
+
+    a {
+      display: block;
+      color: black;
+      font-size: 16px;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    a:hover {
+      background-color: #f8d3d3;
+    }
+
+    section {
+      max-width: 50%;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1 px solid #ccc;
+      border-radius: 5px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    button {
+      background-color: #a98e8e;
+      color: white;
+      cursor: pointer;
+      border: none;
+    }
+
+    button:hover{
+      background-color: #f8d3d3;
+    }
+    h2, p {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="aboutme.html">About Me</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+  <section>
+    <h2>Contact Me</h2>
+    <p>Feel free to reach out to or send feedback on how to improve this portfolio!</p>
+    <form id="contact">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+  </section>
+  <div class="footer">
+      <p>Contact me: axshanbhag@zonemail.clpccd.edu</p>
+      <p>&copy; 2024</p>
+  </div>
+  <script>
+    document.getElementById('contact').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (name && email && message) {
+        alert('Confirmation: Message Sent.');
+        e.target.reset();
+      } else {
+        alert('Please fill in all fields.');
+      }
+    });
+
+  </script>
+</body>
+
+</html>
