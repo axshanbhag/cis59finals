@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>About Arpita Shanbhag</title>
+  <style>
+    body {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    .footer {
+        background-color: lightpink;
+        text-align: center;
+        padding: 25px;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      background-color: #a98e8e;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar a {
+      color: white;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      width: 100%;
+    }
+
+    li {
+      flex: 1;
+      text-align: center;
+    }
+
+    a {
+      display: block;
+      color: black;
+      font-size: 16px;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    a:hover {
+      background-color: #f8d3d3;
+    }
+
+    h2,
+    h3 {
+      text-align: center;
+      padding-bottom: 10px;
+    }
+
+    #details,
+    #hobbies,
+    #goals {
+      max-width: 600px;
+      margin: 20px auto;
+      text-align: center;
+      display: none;
+    }
+
+    button {
+      display: block;
+      margin: 10px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #a98e8e;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #f8d3d3;
+      color: black;
+      box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    section p {
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="aboutme.html">About Me</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+  <section>
+    <h2>About Me</h2>
+    <h3>Details About Myself</h3>
+    <button id="detail">Show More</button>
+    <p id="details">Arpita Shanbhag is a hopeful, young individual major in Computer Science to make a difference in the industry and consistently strives to work towards this long-term goal through her steps and actions in high school that will lead up to college and eventually take her into the engineering workforce. Arpita Shanbhag is a sophomore in high school. She is currently taking AP Calculus AB, AP Seminar, AP Chemistry, and AP Computer Science Principals at her school. Outside of school, she has taken CIS 50 at Las Positas Community College and is certified in Computer Hardware Basics through Cisco. Ever since she was in 8th grade, she's been fascinated by the possibilities that computer science presented. Her interest in computer science was sparked by her expsoure to artificial intelligence, due to the sudden increase in concern and popularity in this area.
+</p>
+
+    <h3>Hobbies</h3>
+    <button id="hobby">Show More</button>
+    <p id="hobbies">Outside of her love for coding, you can find her dancing, reading, growing flowers, or stuyding for her other classes! She enjoys spending time in nature and taking long walks during sunset near the hills or mountains, capturing the essence of the beauty of the present with her eyes. She has recently picked up the hobby of feeding her mind with podcasts such as the <i>Huberman Lab</i> and the <i>Mel Robbin's Podcast</i>.</p>
+
+    <h3>Goals</h3>
+    <button id="goal">Show More</button>
+    <p id="goals">Arpita Shanbhag is currently taking AP Computer Science Principals and is working towards her goal of becoming a software engineer. Looking ahead, she plans to deepen her understanding of computer science by taing more advanced courses such as AP CSA and participate in internships or hackathons that provide hands-on experience. Her goal is to become proficient in coding and develop a strong technical skill set to help her succeed in her future career path and have a solid foundation. Ultimately, she wishes to make more innovative projects that positively impact society using her knowledge of computer science starting from small technical steps today.</p>
+  </section>
+  <div class="footer">
+      <p>Contact me: axshanbhag@zonemail.clpccd.edu</p>
+      <p>&copy; 2024</p>
+  </div>
+  <script>
+    function toggleSection(buttonId, bioId) {
+      const button = document.getElementById(buttonId);
+      const bio = document.getElementById(bioId);
+
+      button.addEventListener('click', function () {
+        if (bio.style.display === 'none' || bio.style.display === '') {
+          bio.style.display = 'block';
+          button.textContent = 'Show Less';
+        } else {
+          bio.style.display = 'none';
+          button.textContent = 'Show More';
+        }
+      });
+    }
+
+    toggleSection('detail', 'details');
+    toggleSection('hobby', 'hobbies');
+    toggleSection('goal', 'goals');
+  </script>
+</body>
+
+</html>
