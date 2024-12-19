@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Projects</title>
+  <style>
+    body {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    .footer {
+        background-color: lightpink;
+        text-align: center;
+        padding: 25px;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      background-color: #a98e8e;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar a {
+      color: white;
+    }
+
+    .navbar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      width: 100%;
+    }
+
+    .navbar ul li {
+      flex: 1;
+      text-align: center;
+    }
+
+    a {
+      display: block;
+      color: black;
+      font-size: 16px;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    a:hover {
+      background-color: #f8d3d3;
+    }
+
+    h2 {
+      text-align: center;
+    }
+    section {
+      max-width: 50%;
+      margin: 20px auto;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+      border: 1 px solid #ccc;
+      border-radius: 5px;
+    }
+    .project.current {
+      display: block;
+    }
+    .project {
+      display: none;
+      width: 100%;
+    }
+    button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #a98e8e;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    img {
+      width: auto;
+      height: 500px;
+      border: 5px solid black;
+      border-radius: 5px;
+    }
+    #prev {
+      left: 1px;
+    }
+    #next {
+      right: 1px;
+    }
+    .description li {
+      padding: 10px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="aboutme.html">About Me</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+  <section>
+    <h2>Projects</h2>
+    <img src="foreverglow.png" alt="forever glow" class="project current">
+    <img src="educonnect.jpg" alt="educonnect" class="project">
+    <img src="parentreport.png" alt="parentreport" class="project">
+    <img src="tictactoe.png" alt="tictactoe" class="project">
+    <button id="prev">←</button>
+    <button id="next">→</button>
+  </section>
+  <section>
+    <ul class = "description">
+      <li>Forever Glow: Forever Glow was a website created that helps empower young women by recommending products that will help elevate their appearance and glow up to feel confident and beautiful. This website was created using HTML, CSS, and JavaScript. I worked on this project with two other classmates in my Computer Science Essentials class. </li>
+      <li>EduConnect: EduConnect is a website that combines a student's love with social media with their need to prioritize their studies. I created this website along with two of my other friends in a Hackathon to provide a solution that improves students' education by creating an app that acts similar to a social media platform with its' content tailored to the student's needs as determined by their teacher.</li>
+      <li>Parent Report: Parent Report was an app created by my friend and I to help teachers and students in the grading system. Teachers often struggle to grade all of the tasks they assign and fail provide feedback in a reasonable period. Therefore, we created a solution by having parent volunteers use this app to grade students' work anonymously such that they understand how a teacher grades, the teacher has some stress aleviated, and students recieve timely feedback in order to make adjustments.</li>
+      <li>Tic Tac Toe: This is a Tic-Tace-Toe game coded in Pythnon and PyGame. I coded this project with my father and was responsible to work on the front-end and back-end of the project. I used the Pygame library to create the game and the Python library to create the front-end. I learned how to use Pygame and create graphics. </li>
+    </ul>
+  </section>
+  <div class="footer">
+      <p>Contact me: axshanbhag@zonemail.clpccd.edu</p>
+      <p>&copy; 2024</p>
+  </div>
+  <script>
+    let currentProject = 0;
+    const projects = document.querySelectorAll('.project');
+    const totalProject = projects.length;
+
+    document.getElementById('next').addEventListener('click', () => {
+      projects[currentProject].classList.remove('current');
+        currentProject = (currentProject + 1) % totalProject;
+      projects[currentProject].classList.add('current');
+    });
+
+    document.getElementById('prev').addEventListener('click', () => {
+        projects[currentProject].classList.remove('current');
+        currentProject = (currentProject - 1 + totalProject) % totalProject;
+        projects[currentProject].classList.add('current');
+    });
+  </script>
+</body>
+
+</html>
